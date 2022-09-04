@@ -1,0 +1,65 @@
+.row {
+  --bs-gutter-x: 0 !important;
+}
+
+.card-estabelcimento {
+  min-height: 12rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  border: 1px solid #f2f2f2;
+  background-color: #fff;
+  border-radius: 12px;
+  transition: all 0.2s linear;
+  margin-left: 7px;
+  margin-right: 7px;
+  margin-bottom: 1rem;
+  transition: opacity 0.2s ease-out;
+  cursor: pointer;
+
+  .capa {
+    width: 100%;
+    object-fit: cover;
+    border-radius: 4px;
+    transition: opacity 0.2s ease-out;
+    height: 7rem;
+  }
+
+  .logo {
+    margin-right: 16px;
+    margin-left: 20px;
+
+    img {
+      height: 75px;
+      width: 75px;
+      position: relative;
+      bottom: 41px;
+      border-radius: 100%;
+    }
+  }
+
+  .informacoes {
+    line-height: 15px;
+
+    h5 {
+      font-size: 1rem;
+      margin: 0;
+    }
+
+    .icons {
+      font-size: 0.75rem;
+      color: #00000096;
+
+      fa-icon {
+        color: #ea1d2c;
+      }
+    }
+  }
+
+  @media only screen and (min-width: 960px) {
+    &:hover {
+      box-shadow: 0 2px 8px rgb(0 0 0 / 12%);
+      transform: scale(1.02);
+    }
+  }
+}

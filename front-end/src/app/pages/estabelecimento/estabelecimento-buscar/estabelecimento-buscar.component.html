@@ -1,0 +1,58 @@
+<app-header-menu [options]="headerMenu">
+  <div class="row">
+
+    <div class="col-md-12 mb-4 d-flex justify-content-center">
+      <div  class="col-md-8 mt-4 input-pesquisa col">
+        <app-input-search [control]="controlEstabelecimentoBuscar" (response)="responseEvent($event)">
+        </app-input-search>
+      </div>
+    </div>
+
+    <div *ngFor="let estabelecimento of estabelecimentos" (click)="redirecionarDetalhes(estabelecimento)"
+      class="col-md-4">
+      <div class="card-estabelcimento col-md d-flex flex-column">
+
+        <div class="col-md-12">
+          <img class="capa" [src]="estabelecimento?.imagemFundo">
+        </div>
+
+        <div class="col-md-12 d-flex">
+          <div class="logo">
+            <img [src]="estabelecimento?.imagemLogo">
+          </div>
+          <div class="informacoes mt-2">
+            <h5>{{ estabelecimento?.nome }}</h5>
+            <div>
+              <span *ngIf="estabelecimento?.nota" class="icons">
+                <fa-icon [icon]="['fas', 'star']"></fa-icon>
+                {{ estabelecimento.nota }}
+              </span>
+              <span *ngIf="estabelecimento?.nota" class="icons">
+                •
+              </span>
+              <span class="icons">
+                {{ estabelecimento?.tipo }}
+              </span>
+            </div>
+
+            <div class="mt-2">
+              <span class="icons">
+                {{ estabelecimento?.tempoMin }}min-{{ estabelecimento?.tempoMax }}min
+              </span>
+              <span *ngIf="estabelecimento.desconto" class="icons">
+                •
+              </span>
+              <span class="icons">
+                {{ estabelecimento.desconto | currency:'BRL' }}
+              </span>
+            </div>
+
+          </div>
+        </div>
+
+
+      </div>
+    </div>
+
+  </div>
+</app-header-menu>

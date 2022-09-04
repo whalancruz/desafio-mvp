@@ -1,0 +1,150 @@
+@import "../node_modules/bootstrap/scss/bootstrap";
+
+// Required Bootstrap imports
+@import "../node_modules/bootstrap/scss/variables";
+@import "../node_modules/bootstrap/scss/maps";
+@import "../node_modules/bootstrap/scss/mixins";
+@import "../node_modules/bootstrap/scss/root";
+
+* {
+  font-family: "Rubik";
+  margin: 0;
+  padding: 0;
+}
+
+@media only screen and (min-width: 1248px) {
+  .template {
+    padding: 8px 120px;
+  }
+};
+
+@media only screen and (min-width: 960px) {
+  .template {
+    max-width: 1366px !important;
+    margin: auto;
+    padding: 8px 80px;
+  };
+};
+
+@media only screen and (min-width: 768px) {
+  .template {
+    margin: auto;
+    padding: 0 40px;
+  };
+};
+
+.label-input {
+  width: 100%;
+  background: transparent;
+  display: flex;
+  flex-direction: column;
+  color: #a6a6a6;
+  position: relative;
+  padding: 0;
+
+  .input-name {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    height: 20px;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    transform: translateY(0);
+    transition: 0.2s;
+    font-size: 1rem;
+    left: 14px;
+  }
+}
+
+.label-input input:focus + .input-name,
+.label-input--has-value input {
+  transform: translateY(-23px);
+  font-size: 0.875rem;
+  background-color: #fff;
+  z-index: 1;
+  padding: 5px;
+}
+
+.label-input input:valid + .input-name,
+.label-input--has-value input {
+  transform: translateY(-23px);
+  font-size: 0.875rem;
+  background-color: #fff;
+  z-index: 1;
+  padding: 5px;
+}
+
+.input-invalid {
+  input {
+    border-color: #ee4c58;
+  }
+  span {
+    color: #ee4c58;
+  }
+}
+
+.input-invalid-info {
+  font-size: 0.75rem;
+  margin: 4px 0 0;
+  color: #ee4c58;
+}
+
+.input-invalid-request {
+  font-size: 0.9rem;
+  margin: 4px 0 0;
+  color: #ee4c58;
+};
+
+
+input {
+  color: #3e3e3e;
+  background: transparent;
+  font-weight: 500;
+  outline: none;
+  border-radius: 4px;
+  border: 1px solid #dcdcdc;
+  position: relative;
+  padding: 13px 20px;
+  height: auto;
+  z-index: 1;
+  width: 100%;
+  font-size: 1rem;
+  line-height: 20px;
+}
+
+.btn.primary {
+  background: transparent;
+  text-decoration: none;
+  color: #fff;
+  border: none;
+  padding: 0 20px;
+  border-radius: 4px;
+  margin: 3px 0;
+  height: 50px;
+  font-weight: 500;
+  transition: 0.1s;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  background-color: #ea1d2c;
+  width: 100%;
+}
+
+.drag-scroll-wrapper {
+  height: auto !important;
+}
+
+.drag-scroll-content {
+  /* width */
+  &::-webkit-scrollbar {
+    background-color: transparent !important;
+  }
+
+  /* Handle */
+  &::-webkit-scrollbar-thumb {
+    background-color: transparent !important;
+  }
+}

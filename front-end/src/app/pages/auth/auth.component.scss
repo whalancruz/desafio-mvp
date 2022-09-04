@@ -1,0 +1,105 @@
+.container-login {
+  height: 100vh;
+  overflow: hidden;
+
+  .header-image {
+    min-height: 35vh;
+    display: flex;
+    align-items: center;
+
+    img {
+      height: auto;
+      width: 100%;
+    }
+
+    @media only screen and (min-width: 960px) {
+      height: 100vh !important;
+    }
+  }
+
+  .header-login {
+    .titulo {
+      font-size: 1.5rem;
+      line-height: 30px;
+      color: #414143;
+      margin: 0 0 20px;
+      font-weight: 500;
+      letter-spacing: 0.0246em;
+      text-align: center;
+    }
+
+    .sub-titulo {
+      font-size: 1rem;
+      font-weight: 400;
+      color: #717171;
+      margin: 0 0 22px;
+      text-align: center;
+    }
+
+    .email-button {
+      border: 1px solid #dcdcdc;
+      color: #a6a6a6;
+      -webkit-appearance: button;
+      background: #fff;
+      text-decoration: none;
+      padding: 0 20px;
+      border-radius: 4px;
+      margin: 3px 0;
+      height: 50px;
+      font-weight: 500;
+      transition: 0.1s;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+      -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+      width: 100%;
+    }
+  }
+
+  .divisor {
+    @media only screen and (max-width: 960px) {
+      flex-direction: column !important;
+    }
+  }
+}
+
+.modal-auth {
+  max-width: 510px;
+  border-radius: 8px;
+  padding: 36px 30px;
+  background-color: #fff;
+  align-self: center;
+
+  @media only screen and (min-width: 960px) {
+    box-shadow: 0 1px 4px rgb(0 0 0 / 5%), 0 4px 16px rgb(0 0 0 / 6%);
+  }
+}
+
+.esconder-imagem {
+  @media only screen and (max-width: 960px) {
+    display: none !important;
+  }
+}
+
+.header-formulario {
+  fa-icon {
+    font-size: 1.3rem;
+    cursor: pointer;
+  }
+  span {
+    text-transform: uppercase;
+    font-size: 0.9rem;
+  }
+}
+
+.content-formulario {
+  p {
+    font-size: 1.125rem;
+    text-align: center;
+    margin: 40px 0 20px;
+    justify-self: center;
+    color: #717171;
+  }
+}

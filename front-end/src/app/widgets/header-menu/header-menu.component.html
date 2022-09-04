@@ -1,0 +1,68 @@
+<header class="header-desktop">
+
+  <nav class="lista-menus">
+    <ul>
+      <li (click)="redirectUrl('home')" [ngClass]="{ 'active': (pagesService.routerService.currentUrl === '/home') }">Início</li>
+      <li>Promoções</li>
+      <li (click)="redirectUrl('buscar')" [ngClass]="{ 'active': (pagesService.routerService.currentUrl === '/buscar') }">Buscar</li>
+      <li>Meu Perfil</li>
+    </ul>
+  </nav>
+
+  <div  class="input-search">
+    <div *ngIf="options.type === eHeaderMenuType.Bars">
+      <app-input-search [control]="controlHeaderMenu" (response)="responseEvent($event)"></app-input-search>
+    </div>
+  </div>
+
+  <div class="info-user">
+    <span>Olá {{ user?.nome }} você está nesse endereço?</span>
+    <span class="location">
+      <fa-icon  [icon]="['fas', 'location-dot']"></fa-icon>
+      {{ user?.endereco }}
+      <fa-icon  [icon]="['fas', 'angle-down']"></fa-icon>
+    </span>
+  </div>
+
+</header>
+
+<header class="header-mobile">
+
+  <div *ngIf="options.type === eHeaderMenuType.Bars" class="menu-action">
+    <fa-icon [icon]="['fas', 'bars']"></fa-icon>
+  </div>
+
+  <div *ngIf="options.type === eHeaderMenuType.Arrow" (click)="pagesService.location.back()" class="menu-action">
+    <fa-icon [icon]="['fas', 'arrow-left']"></fa-icon>
+  </div>
+
+  <div class="info-user">
+    <span>Olá {{ user?.nome }} você está nesse endereço?</span>
+    <span class="location">
+      <fa-icon  [icon]="['fas', 'location-dot']"></fa-icon>
+      {{ user?.endereco }}
+      <fa-icon  [icon]="['fas', 'angle-down']"></fa-icon>
+    </span>
+  </div>
+
+
+  <div class="tab">
+    <button (click)="redirectUrl('home')" [ngClass]="{ 'active': (pagesService.routerService.currentUrl === '/home') }">
+      <fa-icon  [icon]="['fas', 'house']"></fa-icon>
+    </button>
+    <button>
+      <fa-icon  [icon]="['fas', 'ticket']"></fa-icon>
+    </button>
+    <button (click)="redirectUrl('buscar')" [ngClass]="{ 'active': (pagesService.routerService.currentUrl === '/buscar') }">
+      <fa-icon  [icon]="['fas', 'magnifying-glass']"></fa-icon>
+    </button>
+    <button>
+      <fa-icon  [icon]="['fas', 'circle-user']"></fa-icon>
+    </button>
+  </div>
+
+</header>
+
+<div class="template container-fluid padding">
+  <ng-content></ng-content>
+</div>

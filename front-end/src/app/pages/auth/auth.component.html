@@ -1,0 +1,99 @@
+<section class="container-login">
+  <div class="row">
+    <div class="col-md-12 divisor d-flex p-0">
+
+      <div [ngClass]="{ 'esconder-imagem': showButtonVoltar  }" class="d-flex header-image col-md-6 col-12 p-0">
+        <img src="../../../assets/person/favpng_person-sitting-with-plants.png">
+      </div>
+
+      <div class="d-flex header-login col-md-6 col-12 p-0">
+        <div class="col-md-12 col-12 modal-auth">
+
+          <!-- Carrousel -->
+          <div [id]="carrousel.widgetID" class="carousel slide" data-touch="false" data-wrap="false"
+            data-interval="false" data-ride="carousel">
+            <div class="carousel-inner">
+              <form [formGroup]="authForm" (ngSubmit)="acessar()">
+
+
+                <div class="carousel-item active">
+                  <h1 class="titulo">Falta pouco para matar sua fome!</h1>
+                  <h2 class="sub-titulo">Como deseja continuar?</h2>
+                  <div>
+                    <button class="email-button" (click)="nextCarrousel()">E-Mail</button>
+                  </div>
+                </div>
+
+                <div class="carousel-item">
+
+                  <div class="col-md-12 header-formulario d-flex align-items-center justify-content-between">
+                    <fa-icon (click)="prevCarrousel()" [icon]="['fas', 'angle-left']" [fixedWidth]="true"></fa-icon>
+                    <div>
+                      <span>Entrar com e-mail</span>
+                    </div>
+                  </div>
+
+                  <div class="col-md-12 pb-2 content-formulario">
+                    <p>Informe o seu e-mail para continuar</p>
+                    <div>
+                      <label
+                        [ngClass]="{ 'input-invalid': (authForm.get('email').touched && authForm.get('email').invalid) }"
+                        class="label-input" for="email">
+                        <input formControlName="email" name="email" type="text" required>
+                        <span class="input-name">Informe o seu e-mail</span>
+                      </label>
+                      <span *ngIf="authForm.get('email').touched && authForm.get('email').invalid"
+                        class="input-invalid-info">E-mail
+                        inválido</span>
+                    </div>
+                  </div>
+
+                  <div class="col-md-12">
+                    <app-button-event [options]="buttonEmail" [form]="authForm.get('email')"></app-button-event>
+                  </div>
+
+                </div>
+
+                <div class="carousel-item">
+
+                  <div class="col-md-12 header-formulario d-flex align-items-center justify-content-between">
+                    <fa-icon (click)="prevCarrousel()" [icon]="['fas', 'angle-left']" [fixedWidth]="true"></fa-icon>
+                    <div>
+                      <span>Entrar com e-mail</span>
+                    </div>
+                  </div>
+
+                  <div class="col-md-12 pb-2 content-formulario">
+                    <p>Informe a sua senha para continuar</p>
+
+                    <div [hidden]="!validate('password', 'invalido')" class="col-md-12 mb-4 mt-2">
+                      <span class="input-invalid-request">Email ou senha esta inválido</span>
+                    </div>
+
+                    <div>
+                      <label [ngClass]="{ 'input-invalid': (authForm.get('password').touched && authForm.get('password').invalid) }" class="label-input"
+                        for="password">
+                        <input formControlName="password" name="password" type="password" required>
+                        <span class="input-name">Informe a sua senha</span>
+                      </label>
+                      <span *ngIf="authForm.get('password').touched && authForm.get('password').invalid" class="input-invalid-info">Senha
+                        inválida</span>
+                    </div>
+                  </div>
+
+                  <div class="col-md-12">
+                    <app-button-event [options]="buttonAcessar" [form]="authForm.get('password')"></app-button-event>
+                  </div>
+
+                </div>
+
+              </form>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>

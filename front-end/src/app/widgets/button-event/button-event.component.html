@@ -1,0 +1,10 @@
+<button [disabled]="form.invalid || isLoading" (click)="onClickButton()" class="btn primary">
+  <div *ngIf="isLoading" class="spinnerDots">
+    <div class="dotOne" [style.background-color]="'#FFF'"></div>
+    <div class="dotTwo" [style.background-color]="'#FFF'"></div>
+    <div class="dotThrea" [style.background-color]="'#FFF'"></div>
+  </div>
+  <div *ngIf="!isLoading">
+    {{ options.text }}
+  </div>
+</button>
